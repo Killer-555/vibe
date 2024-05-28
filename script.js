@@ -4,11 +4,10 @@ const audioElement = document.getElementById('audio');
 const trackTitleElement = document.getElementById('track-title');
 
 async function fetchTracks() {
-    const response = await fetch('https://vibe-music.herokuapp.com/tracks');
+    const response = await fetch('https://your-app-name.herokuapp.com/tracks');
     tracks = await response.json();
     loadTrack(currentTrackIndex);
 }
-
 
 function loadTrack(index) {
     if (tracks.length === 0) return;
@@ -36,5 +35,4 @@ function prevTrack() {
     loadTrack(currentTrackIndex);
 }
 
-// Initialize the player with the first track
 fetchTracks();
